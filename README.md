@@ -8,7 +8,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 ```mermaid
   graph TD;
       Hateful_Memes_dataset-->Inpainting;
-      Inpainting-->Feature Extraction;
+      Inpainting-->Feature_Extraction
       Feature_Extraction-->lmbd;
       Feature_Extraction-->tsv;
       tsv-->ERNIE-Vil;
