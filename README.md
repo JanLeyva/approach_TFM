@@ -2,18 +2,12 @@
 
 This repsository content all the code needed to reproduce que approach for Hateful Memes comptetition by Facebook AI. The approach follow this structure:
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
+
 
 
 ```mermaid
   graph TD;
-      Hateful Memes dataset-->Inpainting;
+      'Hateful Memes dataset'-->Inpainting;
       Inpainting-->Feature Extraction;
       Feature Extraction-->lmbd;
       Feature Extraction-->tsv;
