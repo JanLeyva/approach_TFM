@@ -7,7 +7,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 ```mermaid
   graph TD;
-      'Hateful Memes dataset'-->Inpainting;
+      Hateful_Memes_dataset-->Inpainting;
       Inpainting-->Feature Extraction;
       Feature Extraction-->lmbd;
       Feature Extraction-->tsv;
