@@ -20,3 +20,42 @@ This repsository content all the code needed to reproduce que approach for Hatef
 		4.2.1 ERNIE-Vil (large):
 
 5. Ensemble:
+
+
+
+
+
+# Attributions
+
+The code heavily borrows from the following repositories, thanks for their great work:
+
+
+@article{mmdetection,
+  title   = {{MMDetection}: Open MMLab Detection Toolbox and Benchmark},
+  author  = {Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and
+             Xiong, Yu and Li, Xiaoxiao and Sun, Shuyang and Feng, Wansen and
+             Liu, Ziwei and Xu, Jiarui and Zhang, Zheng and Cheng, Dazhi and
+             Zhu, Chenchen and Cheng, Tianheng and Zhao, Qijie and Li, Buyu and
+             Lu, Xin and Zhu, Rui and Wu, Yue and Dai, Jifeng and Wang, Jingdong
+             and Shi, Jianping and Ouyang, Wanli and Loy, Chen Change and Lin, Dahua},
+  journal= {arXiv preprint arXiv:1906.07155},
+  year={2019}
+}
+
+@misc{singh2020mmf,
+  author =       {Singh, Amanpreet and Goswami, Vedanuj and Natarajan, Vivek and Jiang, Yu and Chen, Xinlei and Shah, Meet and
+                 Rohrbach, Marcus and Batra, Dhruv and Parikh, Devi},
+  title =        {MMF: A multimodal framework for vision and language research},
+  howpublished = {\url{https://github.com/facebookresearch/mmf}},
+  year =         {2020}
+}
+
+
+@article{yu2020ernie,
+  title={Ernie-vil: Knowledge enhanced vision-language representations through scene graph},
+  author={Yu, Fei and Tang, Jiji and Yin, Weichong and Sun, Yu and Tian, Hao and Wu, Hua and Wang, Haifeng},
+  journal={arXiv preprint arXiv:2006.16934},
+  year={2020}
+}
+
+https://github.com/Muennighoff/vilio
