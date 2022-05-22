@@ -9,8 +9,8 @@ This repsository content all the code needed to reproduce que approach for Hatef
   graph TD;
       Hateful_Memes_dataset-->Inpainting;
       Inpainting-->Feature Extraction;
-      Feature Extraction-->lmbd;
-      Feature Extraction-->tsv;
+      Feature_Extraction-->lmbd;
+      Feature_Extraction-->tsv;
       tsv-->ERNIE-Vil;
       lmbd-->mmf;
       mmf-->VisualBERT;
