@@ -11,10 +11,16 @@ This repsository content all the code needed to reproduce que approach for Hatef
       Inpainting-->Feature_Extraction
       Feature_Extraction-->lmbd;
       Feature_Extraction-->tsv;
-      tsv-->ERNIE-Vil;
+      tsv-->Paddle;
+      Paddle-->ERNIE-Vil;
       lmbd-->mmf;
       mmf-->VisualBERT;
-      mmf-->VilBERT
+	  mmf-->VisualBERTCoco;
+      mmf-->VilBERT;
+      VisualBERT-->Ensemble;
+      VisualBERTCoco-->Ensemble;
+      VilBERT-->Ensemble;
+      ERNIE-Vil-->Ensemble;
 ```
 
 
