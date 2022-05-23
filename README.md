@@ -14,8 +14,10 @@ This repsository content all the code needed to reproduce que approach for Hatef
       B-->C(Feature_Extraction)
       C-->D(lmbd);
       C-->E(tsv);
+      C-->N(FairFace);
       E-->F(Paddle);
-      F-->G(ERNIE-Vil);
+      F-->G(ERNIE-Vil(small));
+      F-->M(ERNIE-Vil(large));
       D-->H(mmf);
       H-->I(VisualBERT);
       H-->J(VisualBERTCoco);
@@ -24,6 +26,9 @@ This repsository content all the code needed to reproduce que approach for Hatef
       J-->L;
       K-->L;
       G-->L;
+      M-->L;
+      N-->L;
+      
       classDef header fill:#008BF8;
 ```
 
