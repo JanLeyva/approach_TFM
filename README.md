@@ -16,8 +16,8 @@ This repsository content all the code needed to reproduce que approach for Hatef
       C-->E(tsv);
       C-->N(FairFace);
       E-->F(Paddle);
-      F-->G(ERNIE-Vil(small));
-      F-->M(ERNIE-Vil(large));
+      F-->G(ERNIE-Vil_small);
+      F-->M(ERNIE-Vil_large);
       D-->H(mmf);
       H-->I(VisualBERT);
       H-->J(VisualBERTCoco);
