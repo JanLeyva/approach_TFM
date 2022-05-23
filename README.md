@@ -11,19 +11,19 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
       A[Hateful_Memes_dataset]==>B(Inpainting);
-      B-->C(Feature_Extraction)
-      C-->D(lmbd);
-      C-->E(tsv);
-      E-->F(Paddle);
-      F-->G(ERNIE-Vil);
-      D-->H(mmf);
-      H-->I(VisualBERT);
-      H-->J(VisualBERTCoco);
-      H-->K(VilBERT);
-      I-->L(Ensemble);
-      J-->L;
-      K-->L;
-      G-->L;
+      B->>C(Feature_Extraction)
+      C->>D(lmbd);
+      C->>E(tsv);
+      E->>F(Paddle);
+      F->>G(ERNIE-Vil);
+      D->>H(mmf);
+      H->>I(VisualBERT);
+      H->>J(VisualBERTCoco);
+      H->>K(VilBERT);
+      I->>L(Ensemble);
+      J->>L;
+      K->>L;
+      G->>L;
 ```
 
 
