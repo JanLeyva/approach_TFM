@@ -7,7 +7,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#33FF77', 
-'edgeLabelBackground':'#000000', 'secondaryColor': '#050600','tertiaryColor': '#33CAFF',
+'edgeLabelBackground':'#000000', 'secondaryColor': '#050600','tertiaryColor': '#000000',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
       Hateful_Memes_dataset:::header==>B(Inpainting);
