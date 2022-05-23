@@ -10,8 +10,8 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'edgeLabelBackground':'#000000', 'secondaryColor': '#000000','tertiaryColor': '#000000',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
-      Hateful_Memes_dataset:::header==>B(Inpainting);
-      B-->C(Feature_Extraction)
+      Hateful_Memes_dataset:::header==>B(Inpainting-OpenMM);
+      B:::models-->C(Feature_Extraction)
       C:::header-->D(lmbd);
       C-->E(tsv);
       C-->N(FairFace);
@@ -29,11 +29,14 @@ This repsository content all the code needed to reproduce que approach for Hatef
       M:::models-->L;
       N:::models-->L;
       L:::ensemble-.->Classifier;
+      Classifier:::classifier;
       
       classDef header fill:#008BF8;
       classDef subheader fill:#42CEFF;
       classDef models fill:#33FF77;
       classDef ensemble fill:#33FF77;
+      classDef classifier fill:#33FF77;
+
       
 ```
 
