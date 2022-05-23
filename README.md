@@ -15,11 +15,11 @@ This repsository content all the code needed to reproduce que approach for Hatef
       C:::header-->D(lmbd);
       C-->E(tsv);
       C-->N(FairFace);
-      E-->F(Paddle);
-      F-->G(ERNIE-Vil_small);
-      F-->M(ERNIE-Vil_large);
-      D-->H(mmf);
-      H-->I(VisualBERT);
+      E:::header-->F(Paddle);
+      F:::subheader-->G(ERNIE-Vil_small);
+      F:::subheader-->M(ERNIE-Vil_large);
+      D:::header-->H(MMF);
+      H:::subheader-->I(VisualBERT);
       H-->J(VisualBERTCoco);
       H-->K(VilBERT);
       I-->L(Ensemble);
@@ -30,6 +30,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
       N-->L;
       
       classDef header fill:#008BF8;
+      classDef subheader fill:#42CEFF;
 ```
 
 
