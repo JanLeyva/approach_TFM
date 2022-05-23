@@ -6,9 +6,11 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#33FF77', 'edgeLabelBackground':'#030600', 'tertiaryColor': '#33CAFF'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#33FF77', 
+'edgeLabelBackground':'#030600', 'secondaryColor': '#050600','tertiaryColor': '#33CAFF',
+'defaultLinkColor': '#000605'}}}%%
   graph TD;
-      Hateful_Memes_dataset-->Inpainting;
+      Hateful_Memes_dataset==>Inpainting;
       Inpainting-->Feature_Extraction
       Feature_Extraction-->lmbd;
       Feature_Extraction-->tsv;
