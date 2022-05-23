@@ -28,14 +28,12 @@ This repsository content all the code needed to reproduce que approach for Hatef
       G:::models-->L;
       M:::models-->L;
       N:::models-->L;
-      L:::ensemble-.->Classifier;
-      Classifier:::classifier;
+      L:::ensemble;
       
       classDef header fill:#008BF8;
       classDef subheader fill:#42CEFF;
       classDef models fill:#33FF77;
-      classDef ensemble fill:#33FF77;
-      classDef classifier fill:#33FF77;
+      classDef ensemble fill:#FFBD00;
 
       
 ```
