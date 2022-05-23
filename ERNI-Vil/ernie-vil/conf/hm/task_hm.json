@@ -1,0 +1,24 @@
+[
+    {
+    "task": "HM",
+    "num_choice": 1,
+    "annotations_jsonpath_train": "/content/vilio/ernie-vil/data/hm/train.jsonl",
+    "annotations_jsonpath_dev_seen": "/content/vilio/ernie-vil/data/hm/dev_seenlong.jsonl",
+    "annotations_jsonpath_traindev": "/content/vilio/ernie-vil/data/hm/traindev.jsonl",
+    "annotations_jsonpath_test_unseen": "/content/vilio/ernie-vil/data/hm/test_unseenlong.jsonl",
+    "annotations_jsonpath_test_seen": "/content/vilio/ernie-vil/data/hm/test_seenlong.jsonl",
+    "feature_lmdb_path": "/content/vilio/ernie-vil/data/hm/HM_img.tsv",
+    "gt_feature_lmdb_path": "/content/vilio/ernie-vil/data/hm/HM_gt_img.tsv",
+    "unisex_names_table" : "/content/vilio/ernie-vil/data/vcr/unisex_names_table.csv",
+    "Proprocessor": "PreprocessorBasic",
+    "tokenizer_name" : "FullTokenizer",
+    "fusion_method" : "mul",
+    "dropout_rate" : 0.1,
+    "max_seq_len" : 128,
+    "use_gt_fea" : true,
+    "shufflekeep_across_task": true,
+    "shuffle_every_epoch": true,
+    "task_weight": 1.0,
+    "task_prefix": "hm"
+    }
+]

@@ -1,0 +1,5 @@
+json_lines
+imagehash
+numpy==1.14.3
+paddlepaddle-gpu==1.8.3.post97
+pandas==1.0.5
