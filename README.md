@@ -24,7 +24,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
       J-->L;
       K-->L;
       G-->L;
-      classDef someclass fill:#f96;
+      classDef Hateful_Memes_dataset fill:#f96;
 ```
 
 
