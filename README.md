@@ -10,7 +10,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'edgeLabelBackground':'#030600', 'secondaryColor': '#050600','tertiaryColor': '#33CAFF',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
-      A:::Hateful_Memes_dataset==>B(Inpainting);
+      Hateful_Memes_dataset:::header==>B(Inpainting);
       B-->C(Feature_Extraction)
       C-->D(lmbd);
       C-->E(tsv);
@@ -24,7 +24,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
       J-->L;
       K-->L;
       G-->L;
-      classDef Hateful_Memes_dataset fill:#f96;
+      classDef header fill:#008BF8;
 ```
 
 
