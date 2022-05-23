@@ -11,8 +11,8 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
       Hateful_Memes_dataset:::header==>B(Inpainting);
-      B-->C(Feature_Extraction:::header)
-      C-->D(lmbd);
+      B-->C(Feature_Extraction)
+      C:::header-->D(lmbd);
       C-->E(tsv);
       C-->N(FairFace);
       E-->F(Paddle);
