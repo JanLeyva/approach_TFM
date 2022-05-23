@@ -10,20 +10,20 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'edgeLabelBackground':'#030600', 'secondaryColor': '#050600','tertiaryColor': '#33CAFF',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
-      Hateful_Memes_dataset==>B(Inpainting);
+      A[Hateful_Memes_dataset]==>B(Inpainting);
       B-->C(Feature_Extraction)
       C-->D(lmbd);
-      Feature_Extraction-->tsv;
-      tsv-->Paddle;
-      Paddle-->ERNIE-Vil;
-      lmbd-->mmf;
-      mmf-->VisualBERT;
-	  mmf-->VisualBERTCoco;
-      mmf-->VilBERT;
-      VisualBERT-->Ensemble;
-      VisualBERTCoco-->Ensemble;
-      VilBERT-->Ensemble;
-      ERNIE-Vil-->Ensemble;
+      C-->E(tsv);
+      E-->F(Paddle);
+      F-->G(ERNIE-Vil);
+      D-->H(mmf);
+      H-->I(VisualBERT);
+      H-->J(VisualBERTCoco);
+      H-->K(VilBERT);
+      I-->L(Ensemble);
+      J-->L;
+      K-->L;
+      G-->L;
 ```
 
 
