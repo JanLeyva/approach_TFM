@@ -6,7 +6,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#33FF77', 
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000000', 
 'edgeLabelBackground':'#000000', 'secondaryColor': '#000000','tertiaryColor': '#000000',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
@@ -28,10 +28,13 @@ This repsository content all the code needed to reproduce que approach for Hatef
       G:::models-->L;
       M:::models-->L;
       N:::models-->L;
+      L:::ensemble-.->Classifier;
       
       classDef header fill:#008BF8;
       classDef subheader fill:#42CEFF;
       classDef models fill:#33FF77;
+      classDef ensemble fill:#33FF77;
+      
 ```
 
 
