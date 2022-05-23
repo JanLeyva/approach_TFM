@@ -10,9 +10,9 @@ This repsository content all the code needed to reproduce que approach for Hatef
 'edgeLabelBackground':'#030600', 'secondaryColor': '#050600','tertiaryColor': '#33CAFF',
 'defaultLinkColor': '#000605'}}}%%
   graph TD;
-      B(Hateful_Memes_dataset)==>Inpainting;
-      B(Inpainting)-->Feature_Extraction
-      Feature_Extraction-->lmbd;
+      (Hateful_Memes_dataset)==>B(Inpainting);
+      B(Inpainting)-->B(Feature_Extraction)
+      B(Feature_Extraction)-->lmbd;
       Feature_Extraction-->tsv;
       tsv-->Paddle;
       Paddle-->ERNIE-Vil;
