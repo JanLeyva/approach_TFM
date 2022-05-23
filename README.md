@@ -22,15 +22,16 @@ This repsository content all the code needed to reproduce que approach for Hatef
       H:::subheader-->I(VisualBERT);
       H-->J(VisualBERTCoco);
       H-->K(VilBERT);
-      I-->L(Ensemble);
-      J-->L;
-      K-->L;
-      G-->L;
-      M-->L;
-      N-->L;
+      I:::models-->L(Ensemble);
+      J:::models-->L;
+      K:::models-->L;
+      G:::models-->L;
+      M:::models-->L;
+      N:::models-->L;
       
       classDef header fill:#008BF8;
       classDef subheader fill:#42CEFF;
+      classDef models fill:#33FF77;
 ```
 
 
