@@ -50,8 +50,12 @@ This repsository content all the code needed to reproduce que approach for Hatef
 ## 3. Fair Face 
 [noteebok](none):
 
+This model help us to extract features from the photos: Age, gender and race. The main reason that we are interested in is the reace, because a important part of hateful memes are racist.
+
 ## 4. Models
 ### 4.1. MMF (Pytorch):
+`MMF` is a framework based in Pytorch develope by *FacebookAI*. You can check more details in his [doc]().
+
 #### 4.1.1 VisualBERT (small)
 #### 4.1.2 VisualBERT (COCO)
 #### 4.1.3 VilBERT
@@ -63,7 +67,9 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 ## 5. Ensemble:
 
-
+The ensemble will be done in two parts:
+- First a major voting: predict the class with the largest sum of votes from models.
+- Second a racism classifier, the racism classifier is based on a *heuristic* where use the FairFace features and text memes in order to classify if a meme is racist or not.
 
 
 
