@@ -1,3 +1,13 @@
+# Hateful Memes competition modification:
+- create `createCSV.py`: scrip that read the `img` folder and create the .csv file with the propterly format.
+- modification of `predict_bbox.py` to `inference_bbox.py` in order to create a `jsonl` file with:
+   * 'img'
+   * 'bbox'
+   * 'gender'
+   * 'race'
+   * 'race4'
+
+
 # FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age
 
 The paper: https://openaccess.thecvf.com/content/WACV2021/papers/Karkkainen_FairFace_Face_Attribute_Dataset_for_Balanced_Race_Gender_and_Age_WACV_2021_paper.pdf
