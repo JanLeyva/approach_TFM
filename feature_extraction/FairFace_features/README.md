@@ -1,11 +1,43 @@
 # Hateful Memes competition modification:
 - create `createCSV.py`: scrip that read the `img` folder and create the .csv file with the propterly format.
-- modification of `predict_bbox.py` to `inference_bbox.py` in order to create a `jsonl` file with:
+- add `createJson.py` in order to create a `jsonl` file in propterly format with:
    * 'img'
    * 'bbox'
    * 'gender'
    * 'race'
    * 'race4'
+
+Follow the instructions of the original README below in order to get the predictions. At the end execute:
+
+```
+python3 createJson.py -- csv "csvOutputFFFile.csv"
+```
+
+All right, you going to have the following format .json file:
+
+```
+{
+  "96238": {
+    "face_boxes": [
+      "[(98, 261) (183, 346)]",
+      "[(160, 78) (227, 145)]"
+    ],
+    "face_race": [
+      "White",
+      "White"
+    ],
+    "face_race4": [
+      "White",
+      "White"
+    ],
+    "face_gender": [
+      "Male",
+      "Male"
+    ]
+  },
+  
+  ...
+```
 
 
 # FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age
