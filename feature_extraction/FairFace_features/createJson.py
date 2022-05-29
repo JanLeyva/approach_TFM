@@ -19,6 +19,7 @@ for i in range(len((fairface['index']).unique())):
     gender = match['gender']
     
     results[str(match['index'].iloc[0])] = {
+            'id': str(match['index'].iloc[0]),
             'face_boxes': [c for c in boxes],
             'face_race':  [c for c in race],
             'face_race4': [c for c in race4],

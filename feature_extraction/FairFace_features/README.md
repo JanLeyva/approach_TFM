@@ -21,6 +21,7 @@ All right, you going to have the following format .json file:
 ```
 {
   "96238": {
+    "id": "96238",
     "face_boxes": [
       "[(98, 261) (183, 346)]",
       "[(160, 78) (227, 145)]"
