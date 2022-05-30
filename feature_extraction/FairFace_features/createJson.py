@@ -7,12 +7,17 @@ parser = argparse.ArgumentParser(description='scrip to create json file to struc
 parser.add_argument("--csv", help=".csv output of FairFace.")
 args = parser.parse_args()
 
-fairface = pd.read_csv(args.csv)
+df = pd.read_csv(args.csv)
+dff = []
+for i in range(len(df)):
+  dff.append(df['face_name_align'][i].split('/')[1].split('_')[0])
+
+df['index'] = dff
 
 results = {}
-for i in range(len((fairface['index']).unique())):
+for i in range(len((df['index']).unique())):
     
-    match = fairface[fairface['index'] == fairface['index'][i]]    
+    match = df[df['index'] == df['index'][i]]    
     boxes = match['bbox']
     race = match['race']
     race4 = match['race4']
