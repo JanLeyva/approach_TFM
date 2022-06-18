@@ -45,7 +45,9 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 ## 2. Feature extraction 
 
-[notebook](https://colab.research.google.com/drive/1IJt5ViL6tG205209EyGwGp435rIH_tzW): we extract features with different size of features to be used in `ERNIE-Vil` model.
+- [notebook](https://colab.research.google.com/drive/1IJt5ViL6tG205209EyGwGp435rIH_tzW): we extract features with different size of features to be used in `ERNIE-Vil` model.
+
+- Also, are used the `.lmbd` features gived by the competition (download link).
 
 ## 3. Fair Face 
 [noteebok](none):
