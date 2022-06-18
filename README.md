@@ -41,7 +41,7 @@ This repsository content all the code needed to reproduce que approach for Hatef
 
 ## 1. Inpainting the images
 
-[notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B): in order to get more information from images we try to inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) and [github](https://github.com/HimariO/HatefulMemesChallenge.git) both codes from HimariO.
+[notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B): in order to get more information from images we try to inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) and [github](https://github.com/HimariO/HatefulMemesChallenge.git) both codes from [HimariO](https://github.com/HimariO).
 
 ## 2. Feature extraction 
 
