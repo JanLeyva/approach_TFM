@@ -334,7 +334,7 @@ def sa_wrapper(data_path="./results/"):
     test_unseen_probas = pd.DataFrame(test_unseen_probas)
 
     test_unseen_org = pd.read_json("test_unseen.jsonl", lines= True)
-    test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0])
+    test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0], normalize = True)
 
     fpr, tpr, thresholds = metrics.roc_curve(test_unseen_org['label'], test_unseen_SA['proba'],  pos_label=1)
     print("AUROC:", metrics.auc(fpr, tpr))    
