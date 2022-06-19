@@ -1,3 +1,4 @@
+# This code is mainly borrowed from: https://github.com/Muennighoff/vilio
 import pandas as pd
 import numpy as np
 import os
@@ -126,10 +127,6 @@ def sa_wrapper(data_path="./results/"):
 
     test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0])
 
-   
-
-
-
 
 
     # Optimal Threshold for Imbalanced Classification
@@ -147,9 +144,6 @@ def sa_wrapper(data_path="./results/"):
     tprOpt = round(tpr[index], ndigits = 4)
     # print('Best Threshold: {} with G-Mean: {}'.format(thresholdOpt, gmeanOpt))
     # print('FPR: {}, TPR: {}'.format(fprOpt, tprOpt))
-
-
-
     # tresholder for the labeling
     results = []
     for i in range(len(test_unseen_SA['label'])):
@@ -160,12 +154,20 @@ def sa_wrapper(data_path="./results/"):
 
     test_unseen_SA['label'] = results
 
+    # racism rule
+
+    
+
+
+
+
+
+
+
+
+
     print("AUROC:", metrics.auc(fpr, tpr)) 
     print("Acc:", metrics.accuracy_score(test_unseen_org['label'], pd.DataFrame(results)))
-
-
-
-
 
 
     # Create output dir

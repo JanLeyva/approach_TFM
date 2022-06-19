@@ -15,7 +15,6 @@ for i in range(len(df)):
 df['index'] = dff
 
 results = {}
-results2 = []
 for i in range(len((df['index']).unique())):
     
     match = df[df['index'] == df['index'][i]]    
@@ -24,14 +23,13 @@ for i in range(len((df['index']).unique())):
     race4 = match['race4']
     gender = match['gender']
     
-
-    results.append({
+    results[str(match['index'].iloc[0])] = {
             'id': str(match['index'].iloc[0]),
             'face_boxes': [c for c in boxes],
             'face_race':  [c for c in race],
             'face_race4': [c for c in race4],
             'face_gender': [c for c in gender],
-        })
+        }
 
 
 with open('fairface.json', 'w') as fp:
