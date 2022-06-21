@@ -200,7 +200,7 @@ def sa_wrapper(data_path="./results/"):
 
         fairface_anno = []
         for i in range(len(fairface_['id'])):
-            if('Black' or 'White' in fairface_.loc[i]['face_race4']):
+            if('Black' in fairface_.loc[i]['face_race4']):
                 fairface_anno.append(str(fairface_.loc[i]['id']))
 
         # print("fairface_anno:", (fairface_anno))
