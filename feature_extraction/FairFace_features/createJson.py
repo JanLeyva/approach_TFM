@@ -14,8 +14,7 @@ for i in range(len(df)):
 
 df['index'] = dff
 
-results = {}
-results2 = []
+results = []
 for i in range(len((df['index']).unique())):
     
     match = df[df['index'] == df['index'][i]]    

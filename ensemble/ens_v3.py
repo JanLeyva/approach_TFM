@@ -1,7 +1,17 @@
 # This code is mainly borrowed from: https://github.com/Muennighoff/vilio
 import pandas as pd
 import numpy as np
+import json
 import os
+
+import os
+import glob
+import shutil
+
+import fire
+import spacy
+import pandas as pd
+nlp = spacy.load("en_core_web_lg")
 
 from sklearn.metrics import roc_auc_score, accuracy_score
 from sklearn import metrics
@@ -17,8 +27,11 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--enspath", type=str, default="./results/", help="Path to folder with all csvs")
+    parser.add_argument("--fileFairface", type=str, default="fairface.json", help="Path to folder with all csvs")
     parser.add_argument("--enstype", type=str, default="loop", help="Type of ensembling to be performed - Current options: loop / sa")
     parser.add_argument("--exp", type=str, default="experiment", help="Name of experiment for csv's")
+    parser.add_argument("--meme_anno_path", type=str, default="./annotations", help="path annotations")    
+    parser.add_argument("--racism_rule", type=str, default="True", help="True/False racism rule")  
     parser.add_argument("--normalize", type=str, default="False", help="Normalize False by default")    
     parser.add_argument('--subdata', action='store_const', default=False, const=True)
     
@@ -127,10 +140,10 @@ def sa_wrapper(data_path="./results/"):
 
     test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0])
 
-
-
+    # ---------------------------------------------------------------------------------- #
     # Optimal Threshold for Imbalanced Classification
     # https://towardsdatascience.com/optimal-threshold-for-imbalanced-classification-5884e870c293
+    # ---------------------------------------------------------------------------------- #
     fpr, tpr, thresholds = metrics.roc_curve(test_unseen_org['label'], test_unseen_SA['proba'],  pos_label=1)
 
     # G-mean
@@ -154,20 +167,59 @@ def sa_wrapper(data_path="./results/"):
 
     test_unseen_SA['label'] = results
 
+    # ---------------------------------------------------------------------------------- #
     # racism rule
+    # ---------------------------------------------------------------------------------- #
 
-    
+    _racism_rule = args.racism_rule
+    if _racism_rule:
+        # detect keyword in text annotations
+        meme_anno = {}
+        anno_file = os.path.join(args.meme_anno_path, '/test_unseen.jsonl')
+        with open(args.meme_anno_path, 'r') as f:
+            for l in f:
+                data = json.loads(l)
+                meme_anno[data['id']] = data
 
 
+        keyword = ['crime', 'hang', 'rob', 'steal', 'jail', 'prison', 'slave', 'apes', 'criminal', 'gorilla']
+        keyword_tok = list(nlp(' '.join(keyword)))
 
+        rasicm_sample_idx = []
+        for i, (id, anno) in enumerate(meme_anno.items()):
+            match = any([
+            any([token.similarity(kwt) > 0.8 for kwt in keyword_tok])
+                for token in nlp(anno['text'])
+        ])
+            if match:
+                rasicm_sample_idx.append(id)
 
+        # print("rasicm_sample_idx", rasicm_sample_idx)
+        # detect race = 'black'
+        fairface_ = pd.read_json(args.fileFairface)
 
+        fairface_anno = []
+        for i in range(len(fairface_['id'])):
+            if('Black' or 'White' in fairface_.loc[i]['face_race4']):
+                fairface_anno.append(str(fairface_.loc[i]['id']))
 
+        # print("fairface_anno:", (fairface_anno))
+        # check match in annotations text and fairface 'black'
+        racism_results = []
+        for i in range(len(fairface_anno)):
+            if fairface_anno[i] in rasicm_sample_idx:
+                racism_results.append(fairface_anno[i])
 
+        print("match", racism_results)
+        # change proba to 1 if racism detected
+        for i in racism_results:
+            if int(i) in test_unseen_SA['id'].values:
+                test_unseen_SA.at[int(test_unseen_SA.index[test_unseen_SA['id']==int(i)].values), 'proba'] = 1.0
+                test_unseen_SA.at[int(test_unseen_SA.index[test_unseen_SA['id']==int(i)].values), 'label'] = 1.0
 
-
+    fpr, tpr, thresholds = metrics.roc_curve(test_unseen_org['label'], test_unseen_SA['proba'],  pos_label=1)
     print("AUROC:", metrics.auc(fpr, tpr)) 
-    print("Acc:", metrics.accuracy_score(test_unseen_org['label'], pd.DataFrame(results)))
+    print("Acc:", metrics.accuracy_score(test_unseen_org['label'], test_unseen_SA['label']))
 
 
     # Create output dir
