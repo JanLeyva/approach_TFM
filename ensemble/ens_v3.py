@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument("--exp", type=str, default="experiment", help="Name of experiment for csv's")
     parser.add_argument("--meme_anno_path", type=str, default="./annotations", help="path annotations")    
     parser.add_argument("--racism_rule", type=str, default="True", help="True/False racism rule")  
-    parser.add_argument("--normalize", type=str, default="False", help="Normalize False by default")    
+    parser.add_argument("--normalize", type=bool, default="False", help="Normalize False by default")    
     parser.add_argument('--subdata', action='store_const', default=False, const=True)
     
     # Parse the arguments.
@@ -170,9 +170,8 @@ def sa_wrapper(data_path="./results/"):
     # ---------------------------------------------------------------------------------- #
     # racism rule
     # ---------------------------------------------------------------------------------- #
-
-    _racism_rule = args.racism_rule
-    if _racism_rule:
+    if args.racism_rule == "True":
+        print("asd", args.racism_rule)
         # detect keyword in text annotations
         meme_anno = {}
         anno_file = os.path.join(args.meme_anno_path, '/test_unseen.jsonl')
