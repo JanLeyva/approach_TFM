@@ -123,12 +123,12 @@ def sa_wrapper(data_path="./results/"):
 
     for csv in sorted(os.listdir(data_path)):
         if ".csv" in csv:
-            fpr, tpr, thresholds = metrics.roc_curve(test_unseen_org['label'], pd.read_csv(data_path + csv).proba.values,  pos_label=1)
-            print("Included in Simple Average: ", csv, metrics.auc(fpr, tpr))
             if ("dev" in csv) or ("val" in csv):
                 dev.append(pd.read_csv(data_path + csv))
                 dev_probas[csv[:-8]] = pd.read_csv(data_path + csv).proba.values
             elif "test_unseen" in csv:
+                fpr, tpr, thresholds = metrics.roc_curve(test_unseen_org['label'], pd.read_csv(data_path + csv).proba.values,  pos_label=1)
+                print("Included in Simple Average: ", csv, metrics.auc(fpr, tpr))
                 test_unseen.append(pd.read_csv(data_path + csv))
                 test_unseen_probas[csv[:-14]] = pd.read_csv(data_path + csv).proba.values
             elif "test_seen" in csv:
@@ -136,9 +136,16 @@ def sa_wrapper(data_path="./results/"):
                 test_probas[csv[:-7]] = pd.read_csv(data_path + csv).proba.values
 
 
-    test_unseen_probas = pd.DataFrame(test_unseen_probas)
-
-    test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0])
+    for csv in sorted(os.listdir(data_path)):
+        if "test_unseen" in csv:
+            test_unseen_probas = pd.DataFrame(test_unseen_probas)
+            test_unseen_SA = simple_average(test_unseen_probas, test_unseen[0])
+        elif "test_seen" in csv:
+            test_probas = pd.DataFrame(test_probas)
+            test_SA = simple_average(test_probas, test[0])
+        elif "dev_seen" in csv:
+            dev_probas = pd.DataFrame(dev_probas)
+            dev_SA = simple_average(dev_probas, dev_seen[0])
 
     # ---------------------------------------------------------------------------------- #
     # Optimal Threshold for Imbalanced Classification
@@ -171,7 +178,6 @@ def sa_wrapper(data_path="./results/"):
     # racism rule
     # ---------------------------------------------------------------------------------- #
     if args.racism_rule == "True":
-        print("asd", args.racism_rule)
         # detect keyword in text annotations
         meme_anno = {}
         anno_file = os.path.join(args.meme_anno_path, '/test_unseen.jsonl')
@@ -187,7 +193,7 @@ def sa_wrapper(data_path="./results/"):
         rasicm_sample_idx = []
         for i, (id, anno) in enumerate(meme_anno.items()):
             match = any([
-            any([token.similarity(kwt) > 0.8 for kwt in keyword_tok])
+            any([token.similarity(kwt) > 0.95 for kwt in keyword_tok])
                 for token in nlp(anno['text'])
         ])
             if match:
