@@ -512,6 +512,8 @@ def rank_average_method(data_path="./results"):
     # ---------------------------------------------------------------------------------- #
     # Results RANK AVERAGE
     # ---------------------------------------------------------------------------------- #
+    print("-"*50)
+    print("RESULTS RANK AVERAGE")
     print("dev_seen AUROC:", auc_score(dev_seen_org, dev_RA))
     print("dev_seen Acc:", metrics.accuracy_score(dev_seen_org['label'], dev_RA['label']))
 
@@ -522,7 +524,7 @@ def rank_average_method(data_path="./results"):
 
     print("Test_unseen AUROC:", auc_score(test_unseen_org, test_unseen_RA))
     print("Test_unseen Acc:", metrics.accuracy_score(test_unseen_org['label'], test_unseen_RA['label']))
-
+    print("-"*50)
 
     # Create output dir
     os.makedirs(os.path.join(data_path, args.exp), exist_ok=True)
@@ -538,7 +540,7 @@ def rank_average_method(data_path="./results"):
 
 
 
-
+    return dev_RA, test_unseen_RA, test_RA
 
 
 
@@ -723,6 +725,8 @@ def optimization(data_path="./results"):
     # ---------------------------------------------------------------------------------- #
     # Results OPTIMIZATION
     # ---------------------------------------------------------------------------------- #
+    print("-"*50)
+    print("RESULTS OPTIMIZATION")
     print("dev_seen AUROC:", auc_score(dev_seen_org, dev_PA))
     print("dev_seen Acc:", metrics.accuracy_score(dev_seen_org['label'], dev_PA['label']))
 
@@ -733,7 +737,7 @@ def optimization(data_path="./results"):
 
     print("Test_unseen AUROC:", auc_score(test_unseen_org, test_unseen_PA))
     print("Test_unseen Acc:", metrics.accuracy_score(test_unseen_org['label'], test_unseen_PA['label']))
-
+    print("-"*50)
 
     # Create output dir
     os.makedirs(os.path.join(data_path, args.exp), exist_ok=True)
@@ -747,6 +751,7 @@ def optimization(data_path="./results"):
             elif "test_seen" in csv:
                 test_PA.to_csv(os.path.join(data_path, args.exp, args.exp + "_test_seen_PA.csv"), index=False)
 
+    return dev_PA, test_unseen_PA, test_PA
 
 
 ### APPLYING THE HELPER FUNCTIONS ###
@@ -918,6 +923,8 @@ def sa_wrapper(data_path="./results"):
     # ---------------------------------------------------------------------------------- #
     # Results SA
     # ---------------------------------------------------------------------------------- #
+    print("-"*50)
+    print("RESULTS SIMPLE AVERAGE")
     print("dev_seen AUROC:", auc_score(dev_seen_org, dev_SA))
     print("dev_seen Acc:", metrics.accuracy_score(dev_seen_org['label'], dev_SA['label']))
 
@@ -928,7 +935,7 @@ def sa_wrapper(data_path="./results"):
 
     print("Test_unseen AUROC:", auc_score(test_unseen_org, test_unseen_SA))
     print("Test_unseen Acc:", metrics.accuracy_score(test_unseen_org['label'], test_unseen_SA['label']))
-
+    print("-"*50)
 
     # Create output dir
     os.makedirs(os.path.join(data_path, args.exp), exist_ok=True)
@@ -941,7 +948,84 @@ def sa_wrapper(data_path="./results"):
                 test_unseen_SA.to_csv(os.path.join(data_path, args.exp, args.exp + "_test_unseen_SA.csv"), index=False)   
             elif "test_seen" in csv:
                 test_SA.to_csv(os.path.join(data_path, args.exp, args.exp + "_test_seen_SA.csv"), index=False)
+    return dev_SA, test_unseen_SA, test_SA
 
+
+
+
+
+def choose_opt(data_path="./results"):
+    """
+    Compare 3 methods, choose the high AUROC in test set.
+    Then apply this method in loop until the score is not improved.
+    """
+
+    # original files
+    test_unseen_org = pd.read_json(os.path.join(args.meme_anno_path, "test_unseen.jsonl"), lines=True)
+    test_seen_org = pd.read_json(os.path.join(args.meme_anno_path, "test_seen.jsonl"), lines=True)
+    dev_seen_org = pd.read_json(os.path.join(args.meme_anno_path, "dev_seen.jsonl"), lines=True)
+
+    # Applying the 3 methods
+    sa_dev, sa_test_unseen, sa_test_seen = sa_wrapper(args.enspath)
+    ra_dev, ra_test_unseen, ra_test_seen = rank_average_method(args.enspath)
+    sx_dev, sx_test_unseen, sx_test_seen = optimization(args.enspath)
+    prob_results_dev = [sa_dev, ra_dev, sx_dev]
+    prob_results_test = [sa_test_seen, ra_test_seen, sx_test_seen]
+    prob_results_untest = [sa_test_unseen, ra_test_unseen, sx_test_unseen]
+
+    # Calc auroc score
+    auc_sa = auc_score(test_seen_org, sa_test_seen)
+    auc_ra = auc_score(test_seen_org, ra_test_seen)
+    auc_sx = auc_score(test_seen_org, sx_test_seen)
+
+    method_names = ["Simple Average", "Rank Average", "Optimization Simplex"]
+    methods_result = [auc_sa, auc_ra, auc_sx]
+    max_auroc = max(methods_result)
+    print('-'*50)
+    print("Best method", method_names[methods_result.index(max_auroc)])
+    print("Best AUROC {}".format(max_auroc))
+    print('-'*50)
+    print("Results for dev, test_seen, test_unseen")
+    print("AUROC dev {}".format(auc_score(dev_seen_org, prob_results_dev[methods_result.index(max_auroc)])))
+    print("AUROC test {}".format(auc_score(test_seen_org, prob_results_test[methods_result.index(max_auroc)])))
+    print("AUROC test_unseen {}".format(auc_score(test_unseen_org, prob_results_untest[methods_result.index(max_auroc)])))
+
+
+
+def ens_ens(data_path="./results"):
+    """
+    Compare 3 methods, choose the high AUROC in test set.
+    Then apply this method in loop until the score is not improved.
+    """
+
+    # original files
+    test_unseen_org = pd.read_json(os.path.join(args.meme_anno_path, "test_unseen.jsonl"), lines=True)
+    test_seen_org = pd.read_json(os.path.join(args.meme_anno_path, "test_seen.jsonl"), lines=True)
+    dev_seen_org = pd.read_json(os.path.join(args.meme_anno_path, "dev_seen.jsonl"), lines=True)
+
+    # Applying the 3 methods
+    sa_dev, sa_test_unseen, sa_test_seen = sa_wrapper(args.enspath)
+    ra_dev, ra_test_unseen, ra_test_seen = rank_average_method(args.enspath)
+    sx_dev, sx_test_unseen, sx_test_seen = optimization(args.enspath)
+
+    prob_results_dev = [sa_dev, ra_dev, sx_dev]
+    prob_results_test = [sa_test_seen, ra_test_seen, sx_test_seen]
+    prob_results_test_unseen = [sa_test_unseen, ra_test_unseen, sx_test_unseen]
+
+
+
+    # APPLYING RANK AVERAGE
+    # Simple average for the 3 ensemble
+    dev_ens_ens_ra = rank_average(prob_results_dev)
+    test_ens_ens_ra = rank_average(prob_results_test)
+    test_unseen_ens_ens_ra = rank_average(prob_results_test_unseen)
+
+    print('-'*50)
+    print("Results RANK AVERAGE for dev, test_seen, test_unseen")
+    print("AUROC dev {}".format(auc_score(dev_seen_org, dev_ens_ens_ra)))
+    print("AUROC test {}".format(auc_score(test_seen_org, test_ens_ens_ra)))
+    print("AUROC test_unseen {}".format(auc_score(test_unseen_org, test_unseen_ens_ens_ra)))
+    print('-'*50)
 
 
 
@@ -1133,6 +1217,10 @@ if __name__ == "__main__":
     
     if args.enstype == "loop":
         main(args.enspath)
+    elif args.enstype == "best_ens":
+        choose_opt(args.enspath)
+    elif args.enstype == "ens_ens":
+        ens_ens(args.enspath)
     elif args.enstype == "sa":
         sa_wrapper(args.enspath)
     elif args.enstype == "optimizer":
