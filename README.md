@@ -1,6 +1,6 @@
 # First approach HM competition
 
-This repsository content all the code needed to reproduce que approach for Hateful Memes comptetition by Facebook AI. The approach follow this structure:
+This repsository content all the code needed to reproduce approach for Hateful Memes comptetition by Facebook AI. The approach follow this structure:
 
 
 
