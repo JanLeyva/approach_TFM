@@ -1,7 +1,7 @@
 # Ensemble
 
 The ensemble will be done in two parts:
-- First a major voting: predict the class with the largest sum of votes from models.
+- First ensemble type choosed.
 - Second a racism classifier, the racism classifier is based on a *heuristic* where use the FairFace features and text memes in order to classify if a meme is racist or not.
 
 The scrip `ens.py` can be run as the following example:
