@@ -21,23 +21,11 @@ python ens_v4.py --enspath ./0507Results/ \
 	- sa: simple average
 	- ra: rank average
 	- optimizer: optimization the weight for each prediction using simplex algorithm based on [repository](https://github.com/chrisstroemel/Simple). (minimum 3 files to optimizate).
-	- exp: experiment name, will create a folder with the output of the ensamble.
-	- meme_anno_path: where the HM annotations (.jsonl) are stored.
-	- racism_rule: (boolean) a heuristic where detect if the meme contains the words (or similar) 
+	- loop: run all the ensemble type and return which one reach the highest AUROC in test set.
+	- ens_ens: ensemble the ensembles outputs.
+- exp: experiment name, will create a folder with the output of the ensamble.
+- meme_anno_path: where the HM annotations (.jsonl) are stored.
+- racism_rule: (boolean) a heuristic where detect if the meme contains the words (or similar) 
 	['crime', 'hang', 'rob', 'steal', 'jail', 'prison', 'slave', 'apes', 'criminal', 'gorilla'] and if the fairface race is black.
 
-
-
-	    if args.enstype == "loop":
-        main(args.enspath)
-    elif args.enstype == "best_ens":
-        choose_opt(args.enspath)
-    elif args.enstype == "ens_ens":
-        ens_ens(args.enspath)
-    elif args.enstype == "sa":
-        sa_wrapper(args.enspath)
-    elif args.enstype == "optimizer":
-        optimization(args.enspath)
-    elif args.enstype == "rank_avg":
-        rank_average_method(args.enspath)
 
