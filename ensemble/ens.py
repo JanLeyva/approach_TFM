@@ -27,7 +27,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--enspath", type=str, default="./results/", help="Path to folder with all csvs")
-    parser.add_argument("--fileFairface", type=str, default="fairface.json", help="Path to folder with all csvs")
+    parser.add_argument("--filefairface", type=str, default="fairface.json", help="file with fairface features")
     parser.add_argument("--enstype", type=str, default="loop", help="Type of ensembling to be performed - Current options: loop / sa")
     parser.add_argument("--exp", type=str, default="experiment", help="Name of experiment for csv's")
     parser.add_argument("--meme_anno_path", type=str, default="./annotations", help="path annotations")    
@@ -479,7 +479,7 @@ def rank_average_method(data_path="./results"):
 
         # print("rasicm_sample_idx", rasicm_sample_idx)
         # detect race = 'black'
-        fairface_ = pd.read_json(args.fileFairface)
+        fairface_ = pd.read_json(args.filefairface)
 
         fairface_anno = []
         for i in range(len(fairface_['id'])):
@@ -693,7 +693,7 @@ def optimization(data_path="./results"):
 
         # print("rasicm_sample_idx", rasicm_sample_idx)
         # detect race = 'black'
-        fairface_ = pd.read_json(args.fileFairface)
+        fairface_ = pd.read_json(args.filefairface)
 
         fairface_anno = []
         for i in range(len(fairface_['id'])):
@@ -881,7 +881,7 @@ def sa_wrapper(data_path="./results"):
         rasicm_sample_idx = []
         for i, (id, anno) in enumerate(meme_anno.items()):
             match = any([
-            any([token.similarity(kwt) > 0.8 for kwt in keyword_tok])
+            any([token.similarity(kwt) > 0.6 for kwt in keyword_tok])
                 for token in nlp(anno['text'])
         ])
             if match:
@@ -889,7 +889,7 @@ def sa_wrapper(data_path="./results"):
 
         # print("rasicm_sample_idx", rasicm_sample_idx)
         # detect race = 'black'
-        fairface_ = pd.read_json(args.fileFairface)
+        fairface_ = pd.read_json(args.filefairface)
 
         fairface_anno = []
         for i in range(len(fairface_['id'])):
