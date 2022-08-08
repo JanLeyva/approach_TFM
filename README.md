@@ -1,6 +1,6 @@
-# First approach HM competition
+# Hateful Memes Competition By Facebook AI
 
-This repsository content all the code needed to reproduce approach for Hateful Memes comptetition by Facebook AI. The approach follow this structure:
+This repsository content all the code needed to reproduce approach for Hateful Memes challange. Dispite the competition is close I decide to do my MSc final thesis about this challange. You can reproduce the work using this repository and following the steps detailed in each README and notebook.
 
 
 
@@ -39,6 +39,12 @@ This repsository content all the code needed to reproduce approach for Hateful M
 ```
 
 
+# Table of contents
+
+- [Inpainting the images](##-1.-Inpainting-the-image)
+
+
+
 ## 1. Inpainting the images
 
 In this [notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) and [github](https://github.com/HimariO/HatefulMemesChallenge.git) both codes from [HimariO](https://github.com/HimariO).
@@ -53,10 +59,10 @@ The feature extraction is did in two parts, one for the `mmf` models and the oth
 
 - Also, are used the `.lmbd` features gived by the competition (download link).
 
-## 3. Fair Face 
+## 3. FairFace 
 
 This model help us to extract features from the photos: Age, gender and race. The main feature that we are interested in is the reace, because a important part of hateful memes are racist.
-To reproduce this part read the README in or follow the following [notebook](noteebok](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
+To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [notebook](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
 
 
 
