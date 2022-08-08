@@ -42,12 +42,18 @@ This repsository content all the code needed to reproduce approach for Hateful M
 # Table of contents
 
 - [Inpainting the images](##-1.-Inpainting-the-image)
-
+- [Feature extraction](##-2.-Feature-extraction)
+- [FairFace](##-3.-FairFace)
+- [Models](##4.-Models)
+  - [mmf](###-4.1.-MMF (Pytorch):)
+    - [VisualBERT](####-4.1.1-VisualBERT (small))
+  - [ERNIE-Vil](###-4.2-ERNIE-Vil (Paddle):)
+- [Ensemble](##-5.-Ensemble:)
 
 
 ## 1. Inpainting the images
 
-In this [notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) and [github](https://github.com/HimariO/HatefulMemesChallenge.git) both codes from [HimariO](https://github.com/HimariO).
+In this [notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
 
 ## 2. Feature extraction 
 
