@@ -96,7 +96,7 @@ The ensemble will be done in two parts:
 ## Attributions
 
 The code heavily borrows from the following repositories, thanks for their great work:
-
+```
 @article{DBLP:journals/corr/abs-2012-07788,
   author    = {Niklas Muennighoff},
   title     = {Vilio: State-of-the-art Visio-Linguistic Models applied to Hateful
@@ -111,9 +111,9 @@ The code heavily borrows from the following repositories, thanks for their great
   biburl    = {https://dblp.org/rec/journals/corr/abs-2012-07788.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
-
+```
 * Niklas Muennighoff [github](https://github.com/Muennighoff/vilio)
-
+```
 @article{DBLP:journals/corr/abs-2012-08290,
   author    = {Ron Zhu},
   title     = {Enhance Multimodal Transformer With External Label And In-Domain Pretrain:
@@ -128,7 +128,7 @@ The code heavily borrows from the following repositories, thanks for their great
   biburl    = {https://dblp.org/rec/journals/corr/abs-2012-08290.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
-
+```
 
 
 * Alfred lab [github](https://github.com/HimariO/HatefulMemesChallenge)
