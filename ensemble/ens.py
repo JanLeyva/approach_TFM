@@ -465,7 +465,8 @@ def rank_average_method(data_path="./results"):
         meme_anno = {**meme_anno_test_unseen, **meme_anno_test, **meme_anno_dev}
 
 
-        keyword = ['crime', 'hang', 'rob', 'steal', 'jail', 'prison', 'slave', 'apes', 'criminal', 'gorilla']
+        keyword = ['crime', 'hang', 'rob', 'steal', 'jail', 'prison', 'slave', 'apes', 'criminal', 'gorilla',
+        'black', 'islam', 'muslim']
         keyword_tok = list(nlp(' '.join(keyword)))
 
         rasicm_sample_idx = []
