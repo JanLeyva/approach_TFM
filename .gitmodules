@@ -1,0 +1,3 @@
+[submodule "inpainting_hm/mmediting-meme"]
+	path = inpainting_hm/mmediting-meme
+	url = https://github.com/JanLeyva/mmediting-meme
