@@ -96,7 +96,7 @@ The ensemble will be done in two parts:
 ## Attributions
 
 The code heavily borrows from the following repositories, thanks for their great work:
-```BibTeX
+``BibTeX
 @article{DBLP:journals/corr/abs-2012-07788,
   author    = {Niklas Muennighoff},
   title     = {Vilio: State-of-the-art Visio-Linguistic Models applied to Hateful
