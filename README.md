@@ -63,7 +63,9 @@ The problem is solved in two phases:
 ## 1. Download dataset
 
 The dataset used in this work is Hateful Memes dataset, a multi modal (text and images) dataset build in a specific way (check his [website](https://ai.facebook.com/blog/hateful-memes-challenge-and-data-set/) for more details) to use vision and language input in order to solve propertly the problem.
-**The problem:** that would be solve is classify if a memes is hatefl (1) or not hateful (0). The metric used is **AUROC** (as well accuracy is provided for better underestanding) 
+**The problem:** that would be solve is classify if a memes is hatefl (1) or not hateful (0). The metric used is **AUROC** (as well accuracy is provided for better underestanding) .
+
+* Unfortunately the competition is close, but you can **download the dataset** in his [official websit](https://hatefulmemeschallenge.com).
 
 ## 2. Inpainting the images
 
