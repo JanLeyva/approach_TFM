@@ -41,13 +41,15 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 # Table of contents
 
+- Introduction
+- Download dataset
 - [Inpainting the images](##-1.-Inpainting-the-image)
 - [Feature extraction](##-2.-Feature-extraction)
 - [FairFace](##-3.-FairFace)
 - [Models](##4.-Models)
-  - [mmf](###-4.1.-MMF-(Pytorch):)
+  - [mmf](###-4.1.-MMF-(Pytorch))
     - [VisualBERT](####-4.1.1-VisualBERT-(small))
-  - [ERNIE-Vil](###-4.2-ERNIE-Vil-(Paddle):)
+  - [ERNIE-Vil](###-4.2-ERNIE-Vil-(Paddle))
 - [Ensemble](##-5.-Ensemble:)
 
 
