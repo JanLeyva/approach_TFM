@@ -55,7 +55,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 # Introduction
 
-In this REAME a schema is presented in how to reproduce the results for **Hateful Memes** dataset, in order to underestand and *run* the codes of each step go to each one of the sections *README*.
+In this REAME a schema to reproduce the results for **Hateful Memes** dataset is presented. In order to underestand and **run** the codes of each section, go to each one of the *README* folders.
 The problem is solved in two phases:
   1. Image processing (sections: 1, 2, 3 and 4).
   2. Model and Classification (section 5 and 6).
@@ -85,7 +85,7 @@ To reproduce this part read the repository [README](https://github.com/JanLeyva/
 
 
 ## 5. Models
-### 5.1. MMF (Pytorch):
+### 5.1. MMF (Pytorch)
 `MMF` is a framework based in Pytorch develope by *FacebookAI*. 
 
   #### 5.1.1 VisualBERT (small)
@@ -93,11 +93,11 @@ To reproduce this part read the repository [README](https://github.com/JanLeyva/
   #### 5.1.3 VilBERT
 
 
-### 5.2 ERNIE-Vil (Paddle):
-  #### 5.2.1 ERNIE-Vil (small):
-  #### 5.2.1 ERNIE-Vil (large):
+### 5.2 ERNIE-Vil (Paddle)
+  #### 5.2.1 ERNIE-Vil (small)
+  #### 5.2.1 ERNIE-Vil (large)
 
-## 6. Ensemble:
+## 6. Ensemble
 
 The ensemble will be done in two parts:
 - First find the best method for ensembling the models between (simple average, rank average and optimizer).
