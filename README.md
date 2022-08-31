@@ -51,11 +51,25 @@ This repsository content all the code needed to reproduce approach for Hateful M
 - [Ensemble](##-5.-Ensemble:)
 
 
-## 1. Inpainting the images
+
+
+# Introduction
+
+In this REAME a schema is presented in how to reproduce the results for **Hateful Memes** dataset, in order to underestand and *run* the codes of each step go to each one of the sections *README*.
+The problem is solved in two phases:
+  1. Image processing (sections: 1, 2, 3 and 4).
+  2. Model and Classification (section 5 and 6).
+
+## 1. Download dataset
+
+The dataset used in this work is Hateful Memes dataset, a multi modal (text and images) dataset build in a specific way (check his [website](https://ai.facebook.com/blog/hateful-memes-challenge-and-data-set/) for more details) to use vision and language input in order to solve propertly the problem.
+**The problem:** that would be solve is classify if a memes is hatefl (1) or not hateful (0). The metric used is **AUROC** (as well accuracy is provided for better underestanding) 
+
+## 2. Inpainting the images
 
 In this [notebook](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [github](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
 
-## 2. Feature extraction 
+## 3. Feature extraction 
 
 The feature extraction is did in two parts, one for the `mmf` models and the other for the `ernie-vil` models.
 
@@ -63,33 +77,31 @@ The feature extraction is did in two parts, one for the `mmf` models and the oth
  
 - In this [notebook](https://colab.research.google.com/drive/1IJt5ViL6tG205209EyGwGp435rIH_tzW) is reproduced the features extraction using py-bottom-up-attention. Output features with different size (number of features) to be used in `ERNIE-Vil` model (`.tsv` format).
 
-- Also, are used the `.lmbd` features gived by the competition (download link).
-
-## 3. FairFace 
+## 4. FairFace 
 
 This model help us to extract features from the photos: Age, gender and race. The main feature that we are interested in is the reace, because a important part of hateful memes are racist.
 To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [notebook](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
 
 
 
-## 4. Models
-### 4.1. MMF (Pytorch):
-`MMF` is a framework based in Pytorch develope by *FacebookAI*. You can check more details in his [doc]().
+## 5. Models
+### 5.1. MMF (Pytorch):
+`MMF` is a framework based in Pytorch develope by *FacebookAI*. 
 
-#### 4.1.1 VisualBERT (small)
-#### 4.1.2 VisualBERT (COCO)
-#### 4.1.3 VilBERT
+  #### 5.1.1 VisualBERT (small)
+  #### 5.1.2 VisualBERT (COCO)
+  #### 5.1.3 VilBERT
 
 
-### 4.2 ERNIE-Vil (Paddle):
-#### 4.2.1 ERNIE-Vil (small):
-#### 4.2.1 ERNIE-Vil (large):
+### 5.2 ERNIE-Vil (Paddle):
+  #### 5.2.1 ERNIE-Vil (small):
+  #### 5.2.1 ERNIE-Vil (large):
 
-## 5. Ensemble:
+## 6. Ensemble:
 
 The ensemble will be done in two parts:
-- First a major voting: predict the class with the largest sum of votes from models.
-- Second a racism classifier, the racism classifier is based on a *heuristic* where use the FairFace features and text memes in order to classify if a meme is racist or not.
+- First find the best method for ensembling the models between (simple average, rank average and optimizer).
+- Second a racism classifier is applied, the racism classifier is based on a *heuristic* where use the FairFace features and text memes in order to classify if a meme is racist or not.
 
 
 
@@ -114,7 +126,6 @@ The code heavily borrows from the following repositories, thanks for their great
 }
 ```
 * Niklas Muennighoff [github](https://github.com/Muennighoff/vilio)
-
 
 ```BibTeX
 @article{DBLP:journals/corr/abs-2012-08290,
