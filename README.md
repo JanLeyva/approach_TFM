@@ -145,8 +145,15 @@ The code heavily borrows from the following repositories, thanks for their great
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
-
-
 * Alfred lab [github](https://github.com/HimariO/HatefulMemesChallenge)
 
 
+----------------------------------------------------
+## To Do:
+* add grid seach for mmf models
+* add cv
+* py-bottom-up-attention_mmf readme
+* ERNIE-Vil readme
+* inpainting_hm readme
+* mmf models readme
+* results!
