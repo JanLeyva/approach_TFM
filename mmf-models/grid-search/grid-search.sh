@@ -1,7 +1,7 @@
 #!/bin/bash
 export OC_DISABLE_DOT_ACCESS_WARNING=1
 
-
+# if you have root perimision check: chmod +x ./grid-search.sh
 
 mmf_run config="projects/visual_bert/configs/hateful_memes/from_coco.yaml" \
         model="visual_bert" \

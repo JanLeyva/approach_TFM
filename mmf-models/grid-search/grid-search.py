@@ -42,8 +42,11 @@ def main(iter=0):
     confi_dotlist=generate_list()
     confi_dotlist=confi_dotlist[iter:]
     for e, it in enumerate(confi_dotlist):
-        os.mkdir("experiment_{}".format(confi_dotlist[e]['iteration']))
-        rc = call(f"./grid-serarch.sh {experiement_ + str(i)} {confi_dotlist[e]['lr']} {confi_dotlist[e]['w_type']} {confi_dotlist[e]['w_factor']} ", shell=True)
+        if os.path.exists("experiment_{}".format(confi_dotlist[e]['iteration'])):
+            break
+        else:
+            os.mkdir("experiment_{}".format(confi_dotlist[e]['iteration']))
+        rc = call(f"/content/approach_TFM/mmf-models/grid-search/grid-search.sh {'experiement_' + str(e)} {confi_dotlist[e]['lr']} {confi_dotlist[e]['w_type']} {confi_dotlist[e]['w_factor']} ", shell=True)
 
 if __name__ == "__main__":
     args = parse_args()
