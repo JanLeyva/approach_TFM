@@ -119,11 +119,10 @@ def inference_ls(inf_file, conf_file, output_path, dst_path):
 
 
 
-def main():
+def main(args.inf_file, args.conf_file, args.output_path, args.dst_path):
     # ls of files/path in folder
     inference_ls(args.inf_file, args.conf_file, args.output_path, args.dst_path)
 
-
 if __name__ == "__main__":
     args = parse_args()
-    main()
+    main(args.inf_file, args.conf_file, args.output_path, args.dst_path)
