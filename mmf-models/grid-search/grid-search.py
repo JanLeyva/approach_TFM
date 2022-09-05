@@ -8,7 +8,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # parser.add_argument("-home", "--home",  help="home directory.")
-    parser.add_argument("-iter", "--iter",  default = 0, help="number interation to star.")
+    parser.add_argument("-iter", "--iter",type=int ,  default = 0, help="number interation to star.")
 
     # Parse the arguments.
     args = parser.parse_args()
@@ -46,7 +46,7 @@ def main(iter=0):
             break
         else:
             os.mkdir("experiment_{}".format(confi_dotlist[e]['iteration']))
-        rc = call(f"/content/approach_TFM/mmf-models/grid-search/grid-search.sh {'experiement_' + str(e)} {confi_dotlist[e]['lr']} {confi_dotlist[e]['w_type']} {confi_dotlist[e]['w_factor']} ", shell=True)
+        rc = call(f"/content/approach_TFM/mmf-models/grid-search/grid-search.sh {'experiment_' + str(e)} {confi_dotlist[e]['lr']} {confi_dotlist[e]['w_type']} {confi_dotlist[e]['w_factor']} ", shell=True)
 
 if __name__ == "__main__":
     args = parse_args()
