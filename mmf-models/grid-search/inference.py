@@ -2,17 +2,19 @@ import subprocess
 from subprocess import call
 import os
 import argparse
-from sklearn.metrics import roc_auc_score, accuracy_score
+from sklearn.metrics import roc_auc_score, accuracy_score, confusion_matrix, roc_curve
 import pandas as pd
+import numpy as np
 import shutil
+from sklearn import metrics
+from scipy.stats import rankdata
+import math
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-conf_file",        "--conf_file",type=str, default='projects/hateful_memes/configs/visual_bert/from_coco.yaml', help="config file stored.")
-    parser.add_argument("-weigth_model",     "--weigth_model",type=str , help=".pkt file with weigth of the model.")
+    parser.add_argument("-path_pkt",         "--path_pkt",type=str , help=".pkt file with weigth of the model.")
     parser.add_argument("-output_path",      "--output_path",type=str , help="output prediction.")
-    # parser.add_argument("-annotations_file", "--annotations_file",type=str ,  default = 'hateful_memes/defaults/annotations', help="inference file to use [test/train/val]")
     parser.add_argument("-dst_path",         "--dst_path",type=str ,  default = './', help="path to store results.")
 
     # Parse the arguments.
@@ -61,80 +63,78 @@ test_seen_order=test_seen['id']
 test_unseen_order=test_unseen['id']
 
 
-# apply bash inference to 4 annotations
-
-def inference_ls(conf_file, weigth_model, output_path, dst_path):
-    
-    inf_file = ['test_seen.jsonl',
-                'test_unseen.jsonl',
-                'dev_seen.jsonl',
-                'dev_unseen.jsonl']
-
+def inference(path_pkt, output_path, dst_path):
     ls_model=os.listdir(weigth_model)
     for i, file in enumerate(ls_model):
-        
-        for e, ann in enumerate(inf_file):
-            rc = call(f"/content/approach_TFM/mmf-models/grid-search/inference.sh {conf_file} {os.path.join(ls_model[i], 'best.ckpt')} {os.path.join('/root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/annotations', ann)} {output_path}", shell=True)
-
-
-            results=[]
-            for a, folder in enumerate(os.listdir(output_path)):
-                if folder.startswith("hateful_memes"):
-                    file_=os.listdir(os.path.join(output_path, folder, "reports"))  # find the .csv pred file
-                    output=os.path.join(output_path, folder, "reports", file_[0]) # rute to .csv pred file.
-                    prediction=pd.read_csv(output)
-                    if inf_file == "test_seen.jsonl":
+        rc = call(f"/content/approach_TFM/mmf-models/grid-search/inference.sh {os.path.join(ls_model[i], 'best.ckpt')} {os.path.join(output_path, str(ls_model[i] + "_test_seen"))}{os.path.join(output_path, str(ls_model[i] + "_dev_seen"))} {os.path.join(output_path, str(ls_model[i] + "_dev_unseen"))}", shell=True)
+    results=[]
+    for j, folder in enumerate(os.listdir(output_path)):
+        for k, path in enumerate(os.listdir(folder)):
+            if "test_seen" in path:
+                for l, path_ in enumerate(os.listdir(path)):
+                    if path_ startswith("hateful_memes"):
+                        file_=os.listdir(os.path.join(output_path, folder, "reports"))
+                        output=os.path.join(output_path, folder, "reports", file_[0]) # rute to .csv pred file.
+                        prediction=pd.read_csv(output)
                         pred=set_label(test_seen, pd.merge(test_seen_order, prediction))
                         results.append({
-                            'set': 'test_seen',
-                            "auc": roc_auc_score(test_seen['label'], pred['proba']),
-                            "acc": accuracy_score(test_seen['label'], pred['label'])
+                            'set': "test_seen_"file_[0],
+                            'auc': roc_auc_score(test_seen['label'], pred['proba'])
                             })
-                        shutil.copyfile(output, os.path.join(dst_path, file+"_test_seen.csv"))
-                    elif inf_file == "test_unseen.jsonl":
+                        shutil.copyfile(output, os.path.join(dst_path, path+"_test_seen.csv"))
+            elif "test_unseen" in path:
+                for l, path_ in enumerate(os.listdir(path)):
+                    if path_ startswith("hateful_memes"):
+                        file_=os.listdir(os.path.join(output_path, folder, "reports"))
+                        output=os.path.join(output_path, folder, "reports", file_[0]) # rute to .csv pred file.
+                        prediction=pd.read_csv(output)
                         pred=set_label(test_unseen, pd.merge(test_unseen_order, prediction))
                         results.append({
-                            'set': 'test_unseen',
-                            "auc": roc_auc_score(test_unseen['label'], pred['proba']),
-                            "acc": accuracy_score(test_unseen['label'], pred['label'])
+                            'set': "test_unseen_"file_[0],
+                            'auc': roc_auc_score(test_seen['label'], pred['proba'])
                             })
-                        shutil.copyfile(output, os.path.join(dst_path, file+"_test_unseen.csv"))
-                    elif inf_file == "dev_seen.jsonl":
+                        shutil.copyfile(output, os.path.join(dst_path, path+"_test_unseen.csv"))
+            elif "dev_seen" in path:
+                for l, path_ in enumerate(os.listdir(path)):
+                    if path_ startswith("hateful_memes"):
+                        file_=os.listdir(os.path.join(output_path, folder, "reports"))
+                        output=os.path.join(output_path, folder, "reports", file_[0]) # rute to .csv pred file.
+                        prediction=pd.read_csv(output)
                         pred=set_label(dev_seen, pd.merge(dev_seen_order, prediction))
                         results.append({
-                            'set': 'dev_seen',
-                            "auc": roc_auc_score(dev_seen['label'], pred['proba']),
-                            "acc": accuracy_score(dev_seen['label'], pred['label'])
+                            'set': "dev_seen_"+file_[0],
+                            'auc': roc_auc_score(test_seen['label'], pred['proba'])
                             })
-                        shutil.copyfile(output, os.path.join(dst_path, file+"_dev_seen.csv"))
-                    elif inf_file == "dev_unseen.jsonl":
+                        shutil.copyfile(output, os.path.join(dst_path, path+"_dev_seen.csv"))
+            elif "dev_unseen" in path:
+                for l, path_ in enumerate(os.listdir(path)):
+                    if path_ startswith("hateful_memes"):
+                        file_=os.listdir(os.path.join(output_path, folder, "reports"))
+                        output=os.path.join(output_path, folder, "reports", file_[0]) # rute to .csv pred file.
+                        prediction=pd.read_csv(output)
                         pred=set_label(dev_unseen, pd.merge(dev_unseen_order, prediction))
                         results.append({
-                            'set': 'dev_unseen',
-                            "auc": roc_auc_score(dev_unseen['label'], pred['proba']),
-                            "acc": accuracy_score(dev_unseen['label'], pred['label'])
+                            'set': "dev_unseen_"+file_[0],
+                            'auc': roc_auc_score(test_seen['label'], pred['proba'])
                             })
-                        shutil.copyfile(output, os.path.join(dst_path, file+"_dev_unseen.csv"))
-                    else:
-                        print("Error no file found! in {}".format(output))
-
-                    # shutil.copyfile(output, os.path.join(dst_path, file_[0]))
-                    results=pd.DataFrame(results)
-                    results.to_csv(file+"_results.csv", index=False)
-                    
-    return results
+                        shutil.copyfile(output, os.path.join(dst_path, path+"_dev_unseen.csv"))
+            else:
+                print("Assertion: error file.")
 
 
 
-
-def main(conf_file, weigth_model, output_path, dst_path):
-    # ls of files/path in folder
-    results=inference_ls(args.conf_file, args.weigth_model, args.output_path, args.dst_path)
+    results=pd.DataFrame(results)
     results.to_csv("results.csv", index=False)
-    print(results)
+
+
+
+
+def main(path_pkt, output_path, dst_path):
+    # ls of files/path in folder
+    inference_ls(path_pkt, output_path, dst_path)
 
 
 
 if __name__ == "__main__":
     args = parse_args()
-    main(args.conf_file, args.weigth_model, args.output_path, args.dst_path)
+    main(args.path_pkt, args.output_path, args.dst_path)
