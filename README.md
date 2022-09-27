@@ -4,39 +4,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000000', 
-'edgeLabelBackground':'#000000', 'secondaryColor': '#000000','tertiaryColor': '#000000',
-'defaultLinkColor': '#000605'}}}%%
-  graph TD;
-      Hateful_Memes_dataset:::header==>B(Inpainting-OpenMM);
-      B:::models-->C(Feature_Extraction)
-      C:::header-->D(lmbd);
-      C-->E(tsv);
-      C-->N(FairFace);
-      E:::header-->F(Paddle);
-      F:::subheader-->G(ERNIE-Vil_small);
-      F:::subheader-->M(ERNIE-Vil_large);
-      D:::header-->H(MMF);
-      H:::subheader-->I(VisualBERT);
-      H-->J(VisualBERTCoco);
-      H-->K(VilBERT);
-      I:::models-->L(Ensemble);
-      J:::models-->L;
-      K:::models-->L;
-      G:::models-->L;
-      M:::models-->L;
-      N:::models-->L;
-      L:::ensemble;
-      
-      classDef header fill:#008BF8;
-      classDef subheader fill:#42CEFF;
-      classDef models fill:#33FF77;
-      classDef ensemble fill:#FFBD00;
-
-      
-```
+![](diagrams/digrams_hm_approach_arch)
 
 
 # Table of contents
