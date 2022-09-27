@@ -882,7 +882,7 @@ def sa_wrapper(data_path="./results"):
         rasicm_sample_idx = []
         for i, (id, anno) in enumerate(meme_anno.items()):
             match = any([
-            any([token.similarity(kwt) > 0.6 for kwt in keyword_tok])
+            any([token.similarity(kwt) > 0.8 for kwt in keyword_tok])
                 for token in nlp(anno['text'])
         ])
             if match:

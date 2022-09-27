@@ -65,5 +65,6 @@ for j, folder in enumerate(os.listdir(output_path)):
           else:
             print("Assertion, wrong shape file.")
           
+          
 results=pd.DataFrame(results)
 results.to_csv("results.csv", index=False)
