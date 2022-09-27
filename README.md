@@ -4,7 +4,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-![](diagrams/digrams_hm_approach_arch)
+![](diagrams/digrams_hm_approach_arch.png)
 
 
 # Table of contents
