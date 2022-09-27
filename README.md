@@ -7,18 +7,6 @@ This repsository content all the code needed to reproduce approach for Hateful M
 ![](diagrams/hm_approach_architecture.drawio.png)
 
 
-# Table of contents
-
-- Introduction
-- Download dataset
-- [Inpainting the images](##-1.-Inpainting-the-image)
-- [Feature extraction](##-2.-Feature-extraction)
-- [FairFace](##-3.-FairFace)
-- [Models](##4.-Models)
-  - [mmf](###-4.1.-MMF-(Pytorch))
-    - [VisualBERT](####-4.1.1-VisualBERT-(small))
-  - [ERNIE-Vil](###-4.2-ERNIE-Vil-(Paddle))
-- [Ensemble](##-5.-Ensemble:)
 
 
 
@@ -35,7 +23,13 @@ The problem is solved in two phases:
 The dataset used in this work is Hateful Memes dataset, a multi modal (text and images) dataset build in a specific way (check his [website](https://ai.facebook.com/blog/hateful-memes-challenge-and-data-set/) for more details) to use vision and language input in order to solve propertly the problem.
 **The problem:** that would be solve is classify if a memes is hatefl (1) or not hateful (0). The metric used is **AUROC** (as well accuracy is provided for better underestanding) .
 
-* Unfortunately the competition is close, but you can **download the dataset** in his [official websit](https://hatefulmemeschallenge.com).
+* Unfortunately the competition is close, but you can **download the dataset** in his [official website](https://hatefulmemeschallenge.com).
+
+Once the dataset is download, you can store in drive and download it when you want via `asdf`.
+
+```bash
+!wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=HERE_YOUR_ULR_FROM_DRIVE' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=HERE_YOUR_ULR_FROM_DRIVE" -O hateful_memes.zip && rm -rf /tmp/cookies.txt
+```
 
 ## 2. Inpainting the images
 
