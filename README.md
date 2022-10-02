@@ -33,15 +33,15 @@ Once the dataset is download, you can store in drive and download it when you wa
 
 ## 2. Inpainting the images
 
-In this ![Open In Colab](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from ![Open In Colab](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
+In this ![Open In Colab](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
 
 ## 3. Feature extraction 
 
 The feature extraction is did in two parts, one for the `mmf` models and the other for the `ernie-vil` models.
 
-- In this ![Open In Colab](https://colab.research.google.com/drive/1y8RBKamXcWKSRxYTwj4vJpYl0RtXhNoy) is reproduced the features extraction using py-bottom-up-attention for `mmf` models. The output is a `.npy` objects, one for each image with 100 number of features extracted. Then the `.npy` objects are transform to `.mdb` to be used in `mmf` models.
+- In this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1y8RBKamXcWKSRxYTwj4vJpYl0RtXhNoy) is reproduced the features extraction using py-bottom-up-attention for `mmf` models. The output is a `.npy` objects, one for each image with 100 number of features extracted. Then the `.npy` objects are transform to `.mdb` to be used in `mmf` models.
  
-- In this ![Open In Colab](https://colab.research.google.com/drive/1IJt5ViL6tG205209EyGwGp435rIH_tzW) is reproduced the features extraction using py-bottom-up-attention. Output features with different size (number of features) to be used in `ERNIE-Vil` model (`.tsv` format).
+- In this[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IJt5ViL6tG205209EyGwGp435rIH_tzW) is reproduced the features extraction using py-bottom-up-attention. Output features with different size (number of features) to be used in `ERNIE-Vil` model (`.tsv` format).
 
 ## 4. FairFace 
 
@@ -111,29 +111,12 @@ The code heavily borrows from the following repositories, thanks for their great
 
 
 ----------------------------------------------------
-## To Do:
-* results!
 
-
----
 
 <!-- Icons are taken from: https://github.com/edent/SuperTinyIcons -->
 <h2><b> Contact: </b></h2>
   <p align="center">
     <a href="http://janleyva.github.io/">
+asd
     </a>    
-    <!-- <a href="https://github.com/rizavelioglu">
-      <img src="https://camo.githubusercontent.com/b079fe922f00c4b86f1b724fbc2e8141c468794ce8adbc9b7456e5e1ad09c622/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6769746875622e737667" width="60">
-    </a>
-    <a href="https://twitter.com/rizavelioglu">
-      <img src="https://camo.githubusercontent.com/35b0b8bfbd8840f35607fb56ad0a139047fd5d6e09ceb060c5c6f0a5abd1044c/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f747769747465722e737667" width="60">
-      </a
-    <a href="https://www.linkedin.com/in/veliogluriza/">
-      <img src="https://camo.githubusercontent.com/c8a9c5b414cd812ad6a97a46c29af67239ddaeae08c41724ff7d945fb4c047e5/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6c696e6b6564696e2e737667" width="60">
-      </a>
-    <a href="https://scholar.google.com/citations?user=bEGGmqgAAAAJ&hl=en">
-      <img src="https://camo.githubusercontent.com/65ca529d83a419dfbd79954c683f2f928b3e7147433bbfa71f0ddf6824fbe01b/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f676f6f676c655f7363686f6c61722e737667" width="60">
-      </a>
-    <a href="https://www.drivendata.org/users/riza.velioglu/">
-      <img src="https://drivendata-prod-public.s3.amazonaws.com/images/drivendata-logo.svg" width="250">
-    </a> -->
+
