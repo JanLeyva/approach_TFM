@@ -33,7 +33,7 @@ Once the dataset is download, you can store in drive and download it when you wa
 
 ## 2. Inpainting the images
 
-In this ![Open In Colab](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
+In this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
 
 ## 3. Feature extraction 
 
@@ -46,7 +46,7 @@ The feature extraction is did in two parts, one for the `mmf` models and the oth
 ## 4. FairFace 
 
 This model help us to extract features from the photos: Age, gender and race. The main feature that we are interested in is the reace, because a important part of hateful memes are racist.
-To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![Open In Colab](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb)].
+To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![Open In Github](http://www.w3.org/2000/svg)](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
 
 ## 5. Models
 ### 5.1. MMF (Pytorch)
@@ -67,7 +67,7 @@ The ensemble will be done in two parts:
 
 ## Results
 
-![](/extras/img/results.png))
+![](/extras/img/results.png)
 
 ## Attributions
 
@@ -117,6 +117,5 @@ The code heavily borrows from the following repositories, thanks for their great
 <h2><b> Contact: </b></h2>
   <p align="center">
     <a href="http://janleyva.github.io/">
-asd
+      <img src="http://www.w3.org/2000/svg" alt="">
     </a>    
-
