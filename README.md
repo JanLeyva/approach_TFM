@@ -4,7 +4,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-![](extras/diagrams/hm_approach_architecture.drawio.png)
+![](extras/img/model_schema.png =100x20)
 
 
 
