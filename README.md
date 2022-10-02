@@ -3,10 +3,9 @@
 This repsository content all the code needed to reproduce approach for Hateful Memes challange. Dispite the competition is close I decide to do my MSc final thesis about this challange. You can reproduce the work using this repository and following the steps detailed in each README and notebook.
 
 
-
-
-<img src="extras/img/model_schema.png" alt="drawing" width="500"/>
-
+<p align="center">
+  <img src="extras/img/model_schema.png" alt="drawing" width="500"/>
+</p>
 
 
 
