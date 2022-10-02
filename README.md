@@ -5,7 +5,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-<img src="extras/img/model_schema.png" alt="drawing" width="200"/>
+<img src="extras/img/model_schema.png" alt="drawing" width="500"/>
 
 
 
