@@ -1,4 +1,4 @@
-# Hateful Memes Competition By Facebook AI
+# <font color='Aqua'><b> Hateful Memes Competition By Facebook AI </b></font>
 
 This repsository content all the code needed to reproduce approach for Hateful Memes challange. Dispite the competition is close I decide to do my MSc final thesis about this challange. You can reproduce the work using this repository and following the steps detailed in each README and notebook.
 
@@ -65,7 +65,9 @@ The ensemble will be done in two parts:
 - First find the best method for ensembling the models between (simple average, rank average and optimizer).
 - Second a racism classifier is applied, the racism classifier is based on a *heuristic* where use the FairFace features and text memes in order to classify if a meme is racist or not.
 
+## Results
 
+![](./extras/img(results.png))
 
 ## Attributions
 
@@ -110,10 +112,6 @@ The code heavily borrows from the following repositories, thanks for their great
 
 ----------------------------------------------------
 ## To Do:
-* py-bottom-up-attention_mmf readme
-* ERNIE-Vil readme
-* inpainting_hm readme
-* mmf models readme
 * results!
 
 

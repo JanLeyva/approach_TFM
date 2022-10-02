@@ -1,5 +1,38 @@
 English| [简体中文](./README_zh.md) 
 
+
+# HM-Jan Leyva
+
+As mentioned this model is borrowed from https://github.com/Muennighoff/
+vilio who make a really good effort and job transforming the Paddle model
+from python 2 to python 3 and creating the bash scripts. The model is tested in
+python 3.7.13 with Tesla P100. The file that should be stored in ilio/ernie-vil/data/h
+to run the model are the following:
+
+- hm_vgattr3636.tsv
+- hm_vgattr7272.tsv
+- hm_vgattr10100.tsv
+- hm_vg5050.tsv
+- hm_vg10100.tsv
+- /img/ folder
+
+
+1. Download ERNIE-Vil large and small pre-trained models and store in `~vilio/ernievil/ data/ernielarge` and `~vilio/ernie-vil/data/erniesmall`.
+
+2. Now we can train the small model:
+  - For small model:
+```bash
+bash/training/ES/hm_ESSA.sh
+````
+  - For large model:
+```bash
+bash/training/EL/hm_ELSA.sh
+```
+
+3. The results going to be stored in `~/content/vilio/ernie-vil/data/hm` in .csv for the predictions of dev_seen, test_seen, test_unseen.
+
+
+
 # PREFACE (Muennighoff)
 This repository has been copied from https://github.com/PaddlePaddle/ERNIE/tree/repro/ernie-vil and adapted for the following:
 - Updated to Python 3 from Python 2

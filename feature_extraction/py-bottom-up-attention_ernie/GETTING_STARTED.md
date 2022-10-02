@@ -1,4 +1,3 @@
-
 ## Getting Started with Detectron2
 
 This document provides a brief intro of the usage of builtin command-line tools in detectron2.

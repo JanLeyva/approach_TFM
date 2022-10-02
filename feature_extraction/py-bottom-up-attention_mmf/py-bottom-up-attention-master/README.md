@@ -1,3 +1,8 @@
+# py-bottom-up-attention for mmf
+
+This code is borrowd brom [bottom-up-attetion](https://github.com/peteanderson80/bottom-up-attention). To use for extract features for `mmf` framework in `.npy` format, use the following ![Open In Colab](https://colab.research.google.com/drive/1JgRzK2sjIsZDgAYwN7IkqG_9lMqaAxhr?usp=sharing).
+
+
 # Bottom-up Attention with Detectron2 
 
 The detectron2 system with **exactly the same model and weight** as the Caffe VG Faster R-CNN provided in [bottom-up-attetion](https://github.com/peteanderson80/bottom-up-attention).

@@ -1,3 +1,18 @@
+# py-bottom-up-attention
+
+We going to extract the features in two formats .tsv and .npy, for ERNIE-Vil and
+VisualBERT. Both use the same repository py-bottom-attention but the first one will
+extract 5 different size of features (36, 50, 72, 100) as shown in Figure 3.9. Tested
+in environment with python 3.7.13.
+py-bottom-attention in .tsv: The code for ERNIE-Vil model is borrowed from
+https://github.com/Muennighoff/vilio.git .
+1. Place the img folder of the HM-challenge in ./py-bottom-up-attention/data.
+2. Extract features - We use 6 different features for diversity in our models.
+Run them all at once with (aprox 6h):
+
+
+--------------------------
+
 # PREFACE (Muennighoff)
 This repository has been copied from https://github.com/airsplay/py-bottom-up-attention and adapted for the following:
 - Include vgattr extraction script
