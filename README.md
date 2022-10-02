@@ -67,7 +67,7 @@ The ensemble will be done in two parts:
 
 ## Results
 
-![](./extras/img(results.png))
+![](/extras/img/results.png))
 
 ## Attributions
 
