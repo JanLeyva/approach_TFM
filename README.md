@@ -116,8 +116,13 @@ TODO:
 - check all links
 
 <!-- Icons are taken from: https://github.com/edent/SuperTinyIcons -->
-<h2><b> Contact: </b></h2>
+
+<h3 align="left"> Connect with Me: </h3>
   <p align="center">
-    <a href="http://janleyva.github.io/">
-      <img src="http://www.w3.org/2000/svg" alt="">
-    </a>    
+    <a href="http://janleyva.github.io/" target="_blank">
+      <img src="https://drive.google.com/uc?id=1ch2sJfvYrrYZwnAoR0uUaAaDlL0dr27C" alt="homepage" width="40" height="40"/>
+    </a>
+    <a href="https://www.linkedin.com/in/jan-leyva-97141a153/" target="_blank">
+      <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-tile.svg" alt="linkedin" width="40" height="40"/>
+    </a>
+  </p>
