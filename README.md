@@ -119,7 +119,7 @@ TODO:
 <h3 align="left"> Connect with Me: </h3>
   <p align="center">
     <a href="http://janleyva.github.io/" target="_blank">
-      <img src="https://drive.google.com/uc?id=1ch2sJfvYrrYZwnAoR0uUaAaDlL0dr27C" alt="homepage" width="40" height="40"/>
+      <i class="fa fa-github" style="font-size:36px"></i>
     </a>
     <a href="https://www.linkedin.com/in/jan-leyva-97141a153/" target="_blank">
       <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-tile.svg" alt="linkedin" width="40" height="40"/>
