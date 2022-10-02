@@ -25,7 +25,7 @@ The dataset used in this work is Hateful Memes dataset, a multi modal (text and 
 
 * Unfortunately the competition is close, but you can **download the dataset** in his [official website](https://hatefulmemeschallenge.com).
 
-Once the dataset is download, you can store in drive and download it when you want via `asdf`.
+Once the dataset is download, you can store in drive and download it when you want via `wget`.
 
 ```bash
 !wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=HERE_YOUR_ULR_FROM_DRIVE' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=HERE_YOUR_ULR_FROM_DRIVE" -O hateful_memes.zip && rm -rf /tmp/cookies.txt
