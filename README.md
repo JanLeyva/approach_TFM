@@ -4,8 +4,8 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-![](extras/img/model_schema.png)
 
+<img src="extras/img/model_schema.png" alt="drawing" width="200"/>
 
 
 
