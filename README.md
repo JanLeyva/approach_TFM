@@ -46,7 +46,7 @@ The feature extraction is did in two parts, one for the `mmf` models and the oth
 ## 4. FairFace 
 
 This model help us to extract features from the photos: Age, gender and race. The main feature that we are interested in is the reace, because a important part of hateful memes are racist.
-To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![](/extras/img/github.svg)](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
+To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
 
 ## 5. Models
 ### 5.1. MMF (Pytorch)
