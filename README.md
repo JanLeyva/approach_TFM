@@ -4,7 +4,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-![](extras/img/model_schema.png =100x20)
+![](extras/img/model_schema.png)
 
 
 
