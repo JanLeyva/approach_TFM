@@ -45,6 +45,6 @@ python3 ./mmediting-meme/demo/inpainting_demo.py \
 ./data/img_mask_3px/ /content/data/img_clean
 ```
 
-![](.//Users/jl/Desktop/TFM/approach_TFM/inpainting_hm/img/gen_mask.png)
+![](/inpainting_hm/img/gen_mask.png)
 
-![](.//Users/jl/Desktop/TFM/approach_TFM/inpainting_hm/img/in-painting.png)
+![](/inpainting_hm/img/in-painting.png)
