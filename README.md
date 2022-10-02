@@ -4,7 +4,7 @@ This repsository content all the code needed to reproduce approach for Hateful M
 
 
 
-![](diagrams/hm_approach_architecture.drawio.png)
+![](extras/diagrams/hm_approach_architecture.drawio.png)
 
 
 
@@ -46,7 +46,7 @@ The feature extraction is did in two parts, one for the `mmf` models and the oth
 ## 4. FairFace 
 
 This model help us to extract features from the photos: Age, gender and race. The main feature that we are interested in is the reace, because a important part of hateful memes are racist.
-To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![Open In Github](http://www.w3.org/2000/svg)](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
+To reproduce this part read the repository [README](https://github.com/JanLeyva/approach_TFM/tree/master/feature_extraction/FairFace_features) or follow the following [![](/extras/img/github.svg)](https://github.com/JanLeyva/approach_TFM/blob/master/feature_extraction/FairFace_features/FairFace_features.ipynb).
 
 ## 5. Models
 ### 5.1. MMF (Pytorch)
@@ -111,7 +111,9 @@ The code heavily borrows from the following repositories, thanks for their great
 
 
 ----------------------------------------------------
+TODO:
 
+- check all links
 
 <!-- Icons are taken from: https://github.com/edent/SuperTinyIcons -->
 <h2><b> Contact: </b></h2>
