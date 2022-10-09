@@ -114,7 +114,7 @@ The code heavily borrows from the following repositories, thanks for their great
 ----------------------------------------------------
 TODO:
 
-- check all links
+- clean folders.
 
 <!-- Icons are taken from: https://github.com/edent/SuperTinyIcons -->
 
