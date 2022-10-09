@@ -1,7 +1,7 @@
 # In-painting Images
 
 
-
+In this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GOAOExipR7TC3iMNpt9vE06oAffWLQF2?usp=sharing) is reproduced the inpainting process.
 
 Once, the dataset is **downloaded** and **unzipped** we can start in-painting the images.
 The code used in this section is borrowed from [HimariO](https://github.com/HimariO/HatefulMemesChallenge), he use [mmdetectionmeme](https://github.com/HimariO/mmdetection-meme)

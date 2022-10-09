@@ -5,6 +5,9 @@ The VisualBERT use MMF framework. This model is tested with python ython
 3.7.11, Tesla P100 and 32 GB. Not use the official repository since the omegacon
 error are not fix. Instead use https://github.com/JanLeyva/mmf.
 
+You can run the model in [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dq5u-cFHVc3MqoP6nT5DPc7k1Uy7ltj4?usp=sharing).
+
+
 1. Once the dataset is download, we must unzip and store in the correct format:
 
 ```bash

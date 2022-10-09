@@ -3,6 +3,8 @@ English| [简体中文](./README_zh.md)
 
 # HM-Jan Leyva
 
+You can run the model in[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12WCJM6r1uICQAR_1_a6HrDYcLMy8FKmL?usp=sharing).
+
 As mentioned this model is borrowed from https://github.com/Muennighoff/
 vilio who make a really good effort and job transforming the Paddle model
 from python 2 to python 3 and creating the bash scripts. The model is tested in

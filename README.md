@@ -32,7 +32,7 @@ Once the dataset is download, you can store in drive and download it when you wa
 
 ## 2. Inpainting the images
 
-In this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XBiNhKOV4uv532swUWaXcT_VatU7qGl2#scrollTo=JOlHTcZBv-2B) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
+In this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GOAOExipR7TC3iMNpt9vE06oAffWLQF2?usp=sharing) reproduce the inpainting process. In order to get more information from images we inpainting the words and got only the image. The code is borrowed from [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/HimariO/mmdetection-meme.git) code and fork from [HimariO](https://github.com/HimariO).
 
 ## 3. Feature extraction 
 
@@ -52,11 +52,13 @@ To reproduce this part read the repository [README](https://github.com/JanLeyva/
 `MMF` is a framework based in Pytorch develope by *FacebookAI*. 
 
   #### 5.1.1 VisualBERT (COCO)
-
+You can run the model in [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dq5u-cFHVc3MqoP6nT5DPc7k1Uy7ltj4?usp=sharing).
 
 ### 5.2 ERNIE-Vil (Paddle)
   #### 5.2.1 ERNIE-Vil (small)
   #### 5.2.1 ERNIE-Vil (large)
+You can run the model in[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12WCJM6r1uICQAR_1_a6HrDYcLMy8FKmL?usp=sharing).
+
 
 ## 6. Ensemble
 
