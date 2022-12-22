@@ -74,7 +74,7 @@ The ensemble will be done in two parts:
 ## Thesis
 
 Winner of NTT Data award to the best Master Thesis in Data Science with the project: "Detecting Hate Speech Using Multimodal Models".
-You can find complet Thesis in the following ![link](https://upcommons.upc.edu/handle/2117/375015)
+You can find complet Thesis in the following [link](https://upcommons.upc.edu/handle/2117/375015)
 
 ## Attributions
 
