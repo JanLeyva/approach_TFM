@@ -70,6 +70,12 @@ The ensemble will be done in two parts:
 
 ![](/extras/img/results.png)
 
+
+## Thesis
+
+Winner of NTT Data award to the best Master Thesis in Data Science with the project: "Detecting Hate Speech Using Multimodal Models".
+You can find complet Thesis in the following ![link](https://upcommons.upc.edu/handle/2117/375015)
+
 ## Attributions
 
 The code heavily borrows from the following repositories, thanks for their great work:
